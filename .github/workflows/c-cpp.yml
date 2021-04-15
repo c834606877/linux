@@ -1,0 +1,20 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ buildroot-openlinux-20171031 ]
+  pull_request:
+    branches: [ buildroot-openlinux-20171031 ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: set_env
+      run: . buildroot/build/setenv.sh
+    - name: make
+      run: make allyesconfig
+
