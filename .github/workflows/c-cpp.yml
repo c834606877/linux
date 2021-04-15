@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: set_env
-      run: . buildroot/build/setenv.sh
     - name: make
       run: make allyesconfig
 
