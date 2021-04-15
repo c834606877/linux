@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: make
+    - name: makecofig
       run: make allyesconfig
+    - name: makeall
+      run: make
 
