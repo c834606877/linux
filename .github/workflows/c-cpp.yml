@@ -22,7 +22,7 @@ jobs:
         export PATH=~/bin:$PATH
         repo init -u git://codeaurora.org/platform/manifest.git -b release -m LA.UM.8.9.r1-08300-SM6xx.0.xml
         repo sync --help
-        repo sync --no-tag -s
+        repo sync --no-tag -c --optimized-fetch
 #    - name: makecofig
 #      run: make allyesconfig
 #    - name: makeall
