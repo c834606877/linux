@@ -14,11 +14,13 @@ jobs:
     steps:
 #    - uses: actions/checkout@v2
     - name: set env
-      run: mkdir ~/bin && export PATH=~/bin:$PATH
+      run: mkdir ~/bin && echo "export PATH=~/bin:$PATH" >> ~/.bashrc
     - name: install repo-tools
       run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
     - name: test repo
-      run: repo help
+      run: |
+        export PATH=~/bin:$PATH
+        repo help
 #    - name: makecofig
 #      run: make allyesconfig
 #    - name: makeall
