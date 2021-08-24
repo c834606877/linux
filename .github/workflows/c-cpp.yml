@@ -20,7 +20,9 @@ jobs:
     - name: test repo
       run: |
         export PATH=~/bin:$PATH
-        repo help
+        repo sync --help
+        repo init -u git://codeaurora.org/platform/manifest.git -b release -m LA.UM.8.9.r1-08300-SM6xx.0.xml
+        repo sync --no-tag -s
 #    - name: makecofig
 #      run: make allyesconfig
 #    - name: makeall
