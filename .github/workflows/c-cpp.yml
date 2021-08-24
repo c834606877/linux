@@ -9,12 +9,18 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@v2
-    - name: makecofig
-      run: make allyesconfig
-    - name: makeall
-      run: make
+#    - uses: actions/checkout@v2
+    - name: set env
+      run: mkdir ~/bin; && export PATH=~/bin:$PATH
+    - name: install repo-tools
+      run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+    - name: test repo
+      run: repo help
+#    - name: makecofig
+#      run: make allyesconfig
+#    - name: makeall
+#      run: make
 
